@@ -4,12 +4,14 @@ namespace App;
 
 class Service 
 {
+    public $externalService;
+
     function callExternalService($param)
     {
-        $externalService = new Service\External();
+        $this->externalService = new Service\External();
 
-        $externalService->sendSomething($param);
+        $this->externalService->sendSomething($param);
 
-        return $externalService->getSomething();
+        return $this->externalService->getSomething();
     }
 }
